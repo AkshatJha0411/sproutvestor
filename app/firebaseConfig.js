@@ -22,4 +22,5 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
+console.log("Connection established");
 export { db };

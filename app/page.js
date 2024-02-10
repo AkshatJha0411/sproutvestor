@@ -1,117 +1,131 @@
 "use client";
-// pages/index.js
 import React, { useState } from "react";
 import { db } from "./firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
 
 const SurveyPage = () => {
   const questions = [
     {
+      id: "1",
       question:
         "Estimate the amount of time you have until you need to start spending the money you are investing.",
       options: [
-        "2 years or less",
-        "3-5 years",
-        "6-10 years",
-        "11-15 years",
-        "more than 15 years",
+        { id: "1_1", text: "2 years or less" },
+        { id: "1_2", text: "3-5 years" },
+        { id: "1_3", text: "6-10 years" },
+        { id: "1_4", text: "11-15 years" },
+        { id: "1_5", text: "more than 15 years" },
       ],
     },
     {
+      id: "2",
       question: "Describe your investment experience.",
       options: [
-        "very inexperienced",
-        "somewhat inexperienced",
-        "somewhat experienced",
-        "experienced",
-        "very experienced",
+        { id: "2_1", text: "very inexperienced" },
+        { id: "2_2", text: "somewhat inexperienced" },
+        { id: "2_3", text: "somewhat experienced" },
+        { id: "2_4", text: "experienced" },
+        { id: "2_5", text: "very experienced" },
       ],
     },
     {
+      id: "3",
       question: "Describe your current and future income sources.",
       options: [
-        "very unstable",
-        "unstable",
-        "somewhat stable",
-        "stable",
-        "very stable",
+        { id: "3_1", text: "very unstable" },
+        { id: "3_2", text: "unstable" },
+        { id: "3_3", text: "somewhat stable" },
+        { id: "3_4", text: "stable" },
+        { id: "3_5", text: "very stable" },
       ],
     },
     {
+      id: "4",
       question: "When do you plan to begin taking money from your investments?",
       options: [
-        "1 year or less",
-        "1-2 years",
-        "3-5 years",
-        "6-10 years",
-        "11-15 years",
-        "more than 15 years",
+        { id: "4_1", text: "1 year or less" },
+        { id: "4_2", text: "1-2 years" },
+        { id: "4_3", text: "3-5 years" },
+        { id: "4_4", text: "6-10 years" },
+        { id: "4_5", text: "11-15 years" },
+        { id: "4_6", text: "more than 15 years" },
       ],
     },
     {
+      id: "5",
       question: "How do you feel about risk during market downturns?",
       options: [
-        "sell all the remaining investment",
-        "sell a portion of the remaining investment",
-        "hold onto the investment and sell nothing",
-        "buy more of the remaining investment",
+        { id: "5_1", text: "sell all the remaining investment" },
+        { id: "5_2", text: "sell a portion of the remaining investment" },
+        { id: "5_3", text: "hold onto the investment and sell nothing" },
+        { id: "5_4", text: "buy more of the remaining investment" },
       ],
     },
     {
+      id: "6",
       question:
         "How would you feel if you saw a sudden change in your account balance?",
       options: [
-        "strongly disagree",
-        "disagree",
-        "somewhat agree",
-        "agree",
-        "strongly agree",
+        { id: "6_1", text: "strongly disagree" },
+        { id: "6_2", text: "disagree" },
+        { id: "6_3", text: "somewhat agree" },
+        { id: "6_4", text: "agree" },
+        { id: "6_5", text: "strongly agree" },
       ],
     },
     {
+      id: "7",
       question:
         "Choose a hypothetical investment based on the potential gain or loss.",
-      options: ["minimal volatility", "moderate volatility", "most volatility"],
-    },
-    {
-      question: "How do you tend to react during market declines?",
       options: [
-        "strongly disagree",
-        "disagree",
-        "somewhat agree",
-        "agree",
-        "strongly agree",
+        { id: "7_1", text: "minimal volatility" },
+        { id: "7_2", text: "moderate volatility" },
+        { id: "7_3", text: "most volatility" },
       ],
     },
     {
+      id: "8",
+      question: "How do you tend to react during market declines?",
+      options: [
+        { id: "8_1", text: "strongly disagree" },
+        { id: "8_2", text: "disagree" },
+        { id: "8_3", text: "somewhat agree" },
+        { id: "8_4", text: "agree" },
+        { id: "8_5", text: "strongly agree" },
+      ],
+    },
+    {
+      id: "9",
       question:
         "Would you invest in a mutual fund or ETF based on a brief conversation with a friend or relative?",
       options: [
-        "strongly disagree",
-        "disagree",
-        "somewhat agree",
-        "agree",
-        "strongly agree",
+        { id: "9_1", text: "strongly disagree" },
+        { id: "9_2", text: "disagree" },
+        { id: "9_3", text: "somewhat agree" },
+        { id: "9_4", text: "agree" },
+        { id: "9_5", text: "strongly agree" },
       ],
     },
     {
+      id: "10",
       question: "Describe your actions during a previous market decline.",
       options: [
-        "sell all the remaining investment",
-        "sell a portion of the remaining investment",
-        "hold onto the investment and sell nothing",
-        "buy more of the remaining investment",
+        { id: "10_1", text: "sell all the remaining investment" },
+        { id: "10_2", text: "sell a portion of the remaining investment" },
+        { id: "10_3", text: "hold onto the investment and sell nothing" },
+        { id: "10_4", text: "buy more of the remaining investment" },
       ],
     },
     {
+      id: "11",
       question:
         "Describe your preference for investment ups and downs and returns.",
       options: [
-        "strongly disagree",
-        "disagree",
-        "somewhat agree",
-        "agree",
-        "strongly agree",
+        { id: "11_1", text: "strongly disagree" },
+        { id: "11_2", text: "disagree" },
+        { id: "11_3", text: "somewhat agree" },
+        { id: "11_4", text: "agree" },
+        { id: "11_5", text: "strongly agree" },
       ],
     },
   ];
@@ -128,6 +142,11 @@ const SurveyPage = () => {
     setSelectedOptions(updatedOptions);
   };
 
+  // Function to log the option's text when its radio button is clicked
+  const logOptionText = (optionText) => {
+    console.log("Selected option text:", optionText);
+  };
+
   return (
     <div className=" bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md">
@@ -139,25 +158,21 @@ const SurveyPage = () => {
               <div>
                 {questionObj.options.map((option, optionIndex) => (
                   <label key={optionIndex} className="inline-flex items-center">
-                    {/* <input
-                      type="radio"
-                      value={option}
-                      checked={selectedOptions[index] === option}
-                      onChange={() => handleOptionChange(index, option)}
-                      className="form-radio text-blue-500"
-                    /> */}
                     <div class="radio-input">
                       <input
                         type="radio"
-                        value={option}
-                        checked={selectedOptions[index] === option}
-                        onChange={() => handleOptionChange(index, option)}
+                        value={option.text}
+                        checked={selectedOptions[index] === option.text}
+                        onChange={() => {
+                          handleOptionChange(index, option.text);
+                          logOptionText(option.text);
+                        }}
                         className=" text-blue-500"
                       />
                       <div class="circle"></div>
                     </div>
-
-                    <span className="mx-3">{option}</span>
+                    <span className="mx-3">{option.text}</span>{" "}
+                    {/* Render only option.text */}
                   </label>
                 ))}
               </div>
@@ -170,7 +185,7 @@ const SurveyPage = () => {
             Submit
           </button>
         </form>
-        <span>Click</span>
+        <span></span>
       </div>
     </div>
   );
