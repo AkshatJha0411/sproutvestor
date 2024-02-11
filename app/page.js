@@ -28,13 +28,12 @@ const Home = () => {
           <div className="container">
             <h2 className="text-4xl">Why Choose SproutVestor?</h2>
             <div className="feature-item">
-              <div className="">
-                <Image
-                  src={SproutIcon}
-                  alt="Personalized Guidance"
-                  className="w-24 h-24 ml-50"
-                />
-              </div>
+              <Image
+                src={SproutIcon}
+                alt="Personalized Guidance"
+                className="w-24 h-24 ml-50"
+              />
+
               <h3>Personalized Guidance</h3>
               <p>
                 Receive tailored investment recommendations based on your

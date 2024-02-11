@@ -7,7 +7,7 @@ const Questionnaire = () => {
     {
       id: "1",
       question:
-        "Estimate the amount of time you have until you need to start spending the money you are investing.",
+        "1. Estimate the amount of time you have until you need to start spending the money you are investing.",
       options: [
         { id: "1_1", text: "2 years or less" },
         { id: "1_2", text: "3-5 years" },
@@ -18,7 +18,7 @@ const Questionnaire = () => {
     },
     {
       id: "2",
-      question: "Describe your investment experience.",
+      question: "2. Describe your investment experience.",
       options: [
         { id: "2_1", text: "very inexperienced" },
         { id: "2_2", text: "somewhat inexperienced" },
@@ -29,7 +29,7 @@ const Questionnaire = () => {
     },
     {
       id: "3",
-      question: "Describe your current and future income sources.",
+      question: "3. Describe your current and future income sources.",
       options: [
         { id: "3_1", text: "very unstable" },
         { id: "3_2", text: "unstable" },
@@ -40,7 +40,8 @@ const Questionnaire = () => {
     },
     {
       id: "4",
-      question: "When do you plan to begin taking money from your investments?",
+      question:
+        "4. When do you plan to begin taking money from your investments?",
       options: [
         { id: "4_1", text: "1 year or less" },
         { id: "4_2", text: "1-2 years" },
@@ -52,7 +53,7 @@ const Questionnaire = () => {
     },
     {
       id: "5",
-      question: "How do you feel about risk during market downturns?",
+      question: "5. How do you feel about risk during market downturns?",
       options: [
         { id: "5_1", text: "sell all the remaining investment" },
         { id: "5_2", text: "sell a portion of the remaining investment" },
@@ -63,7 +64,7 @@ const Questionnaire = () => {
     {
       id: "6",
       question:
-        "How would you feel if you saw a sudden change in your account balance?",
+        "6. How would you feel if you saw a sudden change in your account balance?",
       options: [
         { id: "6_1", text: "strongly disagree" },
         { id: "6_2", text: "disagree" },
@@ -75,7 +76,7 @@ const Questionnaire = () => {
     {
       id: "7",
       question:
-        "Choose a hypothetical investment based on the potential gain or loss.",
+        "7. Choose a hypothetical investment based on the potential gain or loss.",
       options: [
         { id: "7_1", text: "minimal volatility" },
         { id: "7_2", text: "moderate volatility" },
@@ -84,7 +85,7 @@ const Questionnaire = () => {
     },
     {
       id: "8",
-      question: "How do you tend to react during market declines?",
+      question: "8. How do you tend to react during market declines?",
       options: [
         { id: "8_1", text: "strongly disagree" },
         { id: "8_2", text: "disagree" },
@@ -96,7 +97,7 @@ const Questionnaire = () => {
     {
       id: "9",
       question:
-        "Would you invest in a mutual fund or ETF based on a brief conversation with a friend or relative?",
+        "9. Would you invest in a mutual fund or ETF based on a brief conversation with a friend or relative?",
       options: [
         { id: "9_1", text: "strongly disagree" },
         { id: "9_2", text: "disagree" },
@@ -107,7 +108,7 @@ const Questionnaire = () => {
     },
     {
       id: "10",
-      question: "Describe your actions during a previous market decline.",
+      question: "10. Describe your actions during a previous market decline.",
       options: [
         { id: "10_1", text: "sell all the remaining investment" },
         { id: "10_2", text: "sell a portion of the remaining investment" },
@@ -118,7 +119,7 @@ const Questionnaire = () => {
     {
       id: "11",
       question:
-        "Describe your preference for investment ups and downs and returns.",
+        "11. Describe your preference for investment ups and downs and returns.",
       options: [
         { id: "11_1", text: "strongly disagree" },
         { id: "11_2", text: "disagree" },
@@ -163,11 +164,11 @@ const Questionnaire = () => {
         <form>
           {questions.map((questionObj, index) => (
             <div key={index} className="mb-4">
-              <p className="font-bold mb-2">{questionObj.question}</p>
+              <p className="font-bold mb-2 mt-10">{questionObj.question}</p>
               <div>
                 {questionObj.options.map((option, optionIndex) => (
                   <label key={optionIndex} className="inline-flex items-center">
-                    <div class="radio-input">
+                    <div class="radio-input -mr-4 ml-2">
                       <input
                         type="radio"
                         value={option.text}
