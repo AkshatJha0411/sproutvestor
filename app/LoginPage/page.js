@@ -41,7 +41,7 @@ const LoginPage = () => {
 
   return (
     <div className="p-4">
-      <p className="text-lg">Not logged in</p>
+      <h1 className="mb-8 text-3xl font-bold">Login</h1>
       <form className="mt-4">
         <input
           className="border rounded-md py-2 px-3 mb-2 w-full"

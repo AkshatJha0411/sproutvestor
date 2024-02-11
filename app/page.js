@@ -28,11 +28,11 @@ const Home = () => {
           <div className="container">
             <h2 className="text-4xl">Why Choose SproutVestor?</h2>
             <div className="feature-item">
-              <div className="ml-50">
+              <div className="">
                 <Image
                   src={SproutIcon}
                   alt="Personalized Guidance"
-                  className="w-24 h-24 mb-6"
+                  className="w-24 h-24 ml-50"
                 />
               </div>
               <h3>Personalized Guidance</h3>

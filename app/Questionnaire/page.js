@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Questionnaire = () => {
   const questions = [
@@ -187,13 +188,15 @@ const Questionnaire = () => {
               </div>
             </div>
           ))}
-          <button
-            type="button" // Change type to button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={() => console.log(id_list)} // Log id_list when the button is clicked
-          >
-            Submit
-          </button>
+          <Link href="/Stocks">
+            <button
+              type="button" // Change type to button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={() => console.log(id_list)} // Log id_list when the button is clicked
+            >
+              Submit
+            </button>
+          </Link>
         </form>
         <span></span>
       </div>
