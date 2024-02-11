@@ -41,7 +41,7 @@ const LoginPage = () => {
 
   return (
     <div className="p-4">
-      <h1 className="mb-8 text-3xl font-bold">Login</h1>
+      <h1 className="mb-8 text-3xl font-bold">Registration/Login</h1>
       <form className="mt-4">
         <input
           className="border rounded-md py-2 px-3 mb-2 w-full"
@@ -64,16 +64,18 @@ const LoginPage = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
-          type="button"
-          onClick={() => login(email, password)}
-        >
-          Login
-        </button>
         <Link href="/Questionnaire">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
+            type="button"
+            onClick={() => login(email, password)}
+          >
+            Login
+          </button>
+        </Link>
+        <Link href="/Questionnaire">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-72"
             type="button"
             onClick={register}
           >

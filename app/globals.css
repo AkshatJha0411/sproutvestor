@@ -18,6 +18,10 @@ main {
   padding: 2rem 0;
 }
 
+.images-home {
+  width: 150px;
+  margin-left: 600px;
+}
 /* Button styling */
 .btn {
   display: inline-block;
@@ -63,27 +67,9 @@ main {
 }
 
 .feature-item {
-  justify-content: center;
-  align-items: center;
   text-align: center;
   margin-bottom: 3rem;
   animation: fadeInUp 1s ease-out; /* Fade-in animation */
-}
-
-.feature-item img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 1.5rem;
-}
-
-.feature-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.feature-item p {
-  font-size: 1.1rem;
-  line-height: 1.5;
 }
 
 /* Keyframes for fade-in animation */

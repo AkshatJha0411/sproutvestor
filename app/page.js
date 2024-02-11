@@ -5,7 +5,7 @@ import Image from "next/image";
 import SproutIcon from "./images/sprout-icon.png";
 import BrainIcon from "./images/brain-icon.png";
 import SupportIcon from "./images/support-icon.png";
-
+import Logo from "../app/images/logo.png";
 const Home = () => {
   return (
     <div>
@@ -31,27 +31,34 @@ const Home = () => {
               <Image
                 src={SproutIcon}
                 alt="Personalized Guidance"
-                className="w-24 h-24 ml-50"
+                className="images-home"
               />
-
-              <h3>Personalized Guidance</h3>
-              <p>
+              <h3 className="text-2xl mb-2">Personalized Guidance</h3>
+              <p className="text-lg leading-normal">
                 Receive tailored investment recommendations based on your
                 financial goals and risk tolerance.
               </p>
             </div>
             <div className="feature-item">
-              <Image src={BrainIcon} alt="Intelligent Insights" />
-              <h3>Intelligent Insights</h3>
-              <p>
+              <Image
+                src={BrainIcon}
+                alt="Intelligent Insights"
+                className="images-home"
+              />
+              <h3 className="text-2xl mb-2">Intelligent Insights</h3>
+              <p className="text-lg leading-normal">
                 Access advanced market analysis and insights to make informed
                 investment decisions.
               </p>
             </div>
             <div className="feature-item">
-              <Image src={SupportIcon} alt="Expert Support" />
-              <h3>Expert Support</h3>
-              <p>
+              <Image
+                src={SupportIcon}
+                alt="Expert Support"
+                className="images-home"
+              />
+              <h3 className="text-2xl mb-2">Expert Support</h3>
+              <p className="text-lg leading-normal">
                 Get expert assistance and guidance from our team of experienced
                 investors whenever you need it.
               </p>

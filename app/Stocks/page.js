@@ -63,9 +63,10 @@ const page = () => {
   );
 
   return (
-    <div className="">
-      <div>
-        <h2 className="text-4xl">Top 5 stocks to invest in</h2>
+    <div className="ml-4">
+      <div className=" mb-3">
+        <h1 className="text-2xl">Based on the answers you've filled</h1>
+        <h2 className="text-3xl mb-4">Top 5 stocks to invest in</h2>
         <ul>
           {randomStocks.map((stock, index) => (
             <li key={index} className="text-xl">
@@ -74,8 +75,8 @@ const page = () => {
           ))}
         </ul>
       </div>
-      <div>
-        <h2 className="text-4xl">Top 5 mutual funds to invest in</h2>
+      <div className="mb-32">
+        <h2 className="text-3xl mb-4">Top 5 mutual funds to invest in</h2>
         <ul>
           {randomMutualFunds.map((mutualFund, index) => (
             <li key={index} className="text-xl">
@@ -83,6 +84,9 @@ const page = () => {
             </li>
           ))}
         </ul>
+        <h2 className="text-xl">
+          To explore more Mutual Funds visit- <a href="">Money Control</a>
+        </h2>
       </div>
     </div>
   );
