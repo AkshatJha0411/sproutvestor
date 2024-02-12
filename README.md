@@ -29,3 +29,6 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) (or the one it shows in your terminal window if port 3000 is occupied) with your browser to see the result.
+
+## Link to video demo 
+https://vimeo.com/912050106?share=copy
